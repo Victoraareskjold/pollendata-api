@@ -2,7 +2,9 @@ import puppeteer from "puppeteer";
 
 export async function GET() {
   try {
-    const browser = await puppeteer.launch({ headless: "new" });
+    const browser = await puppeteer.connect({
+      browserWSEndpoint: `wss://chrome.browserless.io?token=${process.env.BLESS_TOKEN}`,
+    });
     const page = await browser.newPage();
 
     await page.goto("https://pollenvarsel.naaf.no/charts/forecast", {
