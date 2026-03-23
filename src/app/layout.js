@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
       >
         {children}
       </body>
+      <script src="https://www.consentify.app/api/gateway?token=43e248ed-e28a-4052-a03f-0941fdeff6e1"></script>
     </html>
   );
 }
